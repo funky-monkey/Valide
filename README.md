@@ -53,7 +53,7 @@ Set validation name to field and add rules:
     
 When handling validation, usually by pressing a button, call the `validate()` method. This returns a closure with a success and error.  
   
-Upon receiving an error, the name of the field is returned as well as the error defined in the *Rule file. These can also be customised to your liking
+Upon receiving an error, the name of the field is returned as well as the error defined in the *Rule file. These can also be customised to your liking.
 
         self.name.validate({
                 print("namefield validates")
@@ -73,9 +73,18 @@ Upon receiving an error, the name of the field is returned as well as the error 
                 print("\(validationName) handle: \(error)")
         })
 
+For now; start with validating of the last element in your UI. So the last validation you code, is the first element on screen. I have not found a better way to do this. (If you do - please let me know)
+  
 You can then check the `.isValid()` on the field you are validating. This returns a tuple with three properties. 
 
 `func isValid() -> (isValid:Bool, validationName: String, error: String?)`
+
+So then you can check `self.nonEmptyField.isValid().isValid` property.
+
+	if self.nonEmptyField.isValid().isValid {
+		print("Field validates!")
+		// Do something...
+	}
 
 ## Author
 
