@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MaxCharsRule: Enforceable {
+public class MaxCharsRule: Enforceable {
 
-    var error: String = "Field can only have a maximum of 25 characters"
-    var maxChars: Int?
+    public var error: String = "Field can only have a maximum of 25 characters"
+    public var maxChars: Int?
 
-    func enforce(input: String) -> Bool {
+    public func enforce(input: String) -> Bool {
         return input.characters.count <= self.maxChars
     }
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class RequiredRule: Enforceable {
+public class RequiredRule: Enforceable {
 
-    var error: String = "Field is required"
+    public var error: String = "Field is required"
     
-    func enforce(input: String) -> Bool {
+    public func enforce(input: String) -> Bool {
         return !input.isEmpty
     }
 }

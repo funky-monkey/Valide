@@ -9,7 +9,7 @@
 import Foundation
 
 // Is used for fields that can be validated
-protocol Validatable {
+public protocol Validatable {
     
     /*
     Stap 3: Gebruik maken van observables => Observer
@@ -19,7 +19,7 @@ protocol Validatable {
     Stap 7: Default messages (structs/init???)
     */
 
-    func isValid() -> (isValid:Bool, validationName: String, error: String?)
-    func addRule(rule: Enforceable) -> Void
-    func validate(completion: () -> (), error: (validationName: String, error: String) -> ())
+    public func isValid() -> (isValid:Bool, validationName: String, error: String?)
+    public func addRule(rule: Enforceable) -> Void
+    public func validate(completion: () -> (), error: (validationName: String, error: String) -> ())
 }

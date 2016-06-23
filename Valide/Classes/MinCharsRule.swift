@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MinCharsRule: Enforceable {
+public class MinCharsRule: Enforceable {
 
-    var error: String = "Field does not enforce minumum chars"
-    var minChars: Int?
+    public var error: String = "Field does not enforce minumum chars"
+    public var minChars: Int?
     
-    func enforce(input: String) -> Bool {
+    public func enforce(input: String) -> Bool {
         return input.characters.count >= minChars
     }
 }
