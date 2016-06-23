@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Valide'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Valide.'
+  s.summary          = 'Something that helps you with the validity of the content of UITextFields by adding rules to them.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+I needed a simple way of validating user input, so one afternoon I wrote this. Small, simple and to the point. It helps you with the validity of the content of UITextFields by adding rules to them. These rules can also be defined by you. Most common rules are shipped along the validation classes.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/Valide'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/funky-monkey/Valide'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Sidney de Koning' => 'sidney@thecapitals.nl' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/Valide.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Sidney de Koning' => 'sidney.dekoning@gmail.com' }
+  s.source           = { :git => 'https://github.com/funky-monkey/Valide.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/sidneydekoning'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Valide/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Valide' => ['Valide/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

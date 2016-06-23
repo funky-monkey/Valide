@@ -1,0 +1,14 @@
+PODS:
+  - Valide (0.1.0)
+
+DEPENDENCIES:
+  - Valide (from `../`)
+
+EXTERNAL SOURCES:
+  Valide:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Valide: 3e31854bf7f32ffd8e7c1f63d2d64af4217db699
+
+COCOAPODS: 0.39.0
