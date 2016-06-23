@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/Valide.svg?style=flat)](http://cocoapods.org/pods/Valide)
 [![Platform](https://img.shields.io/cocoapods/p/Valide.svg?style=flat)](http://cocoapods.org/pods/Valide)
 
-## Example
+## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
