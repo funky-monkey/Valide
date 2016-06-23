@@ -10,7 +10,7 @@ import Foundation
 
 public class MaxCharsRule: Enforceable {
 
-	public init() { }
+	required public init() { }
 	
     public var error: String = "Field can only have a maximum of 25 characters"
     public var maxChars: Int?

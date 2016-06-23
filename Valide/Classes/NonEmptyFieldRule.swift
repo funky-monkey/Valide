@@ -10,7 +10,7 @@ import Foundation
 
 public class NonEmptyFieldRule: Enforceable {
 
-	public init() { }
+	required public init() { }
 	
     public var error: String = "Field can not be empty"
 

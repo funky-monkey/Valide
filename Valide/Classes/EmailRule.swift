@@ -10,7 +10,7 @@ import Foundation
 
 public class EmailRule: Enforceable {
 
-	public init() { }
+	required public init() { }
 
     public var error: String = "Field must contain at least a @ and a ."
     
