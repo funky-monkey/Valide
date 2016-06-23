@@ -18,7 +18,7 @@ public class Valide {
     
     private(set) lazy var rules: [UITextField:[Enforceable]]  = [:]
 
-    public func addValidationRule(field: UITextField, rule: Enforceable) -> Void {
+    func addValidationRule(field: UITextField, rule: Enforceable) -> Void {
 
         var enforceables:[Enforceable] = []
 
