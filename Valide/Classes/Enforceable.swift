@@ -9,7 +9,7 @@
 import Foundation
 
 // Enforces rule - executes the actual SomethingRule on the field
-protocol Enforceable {
+public protocol Enforceable {
 	
 	init()
     var error: String { get }
