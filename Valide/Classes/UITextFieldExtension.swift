@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITextField: Validatable {
+extension UITextField: Validatable {
 
     public var validationName: String {
         get {

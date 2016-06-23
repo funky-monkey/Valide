@@ -9,7 +9,7 @@
 import Foundation
 
 // Is used for fields that can be validated
-public protocol Validatable {
+protocol Validatable {
     
     /*
     Stap 3: Gebruik maken van observables => Observer
