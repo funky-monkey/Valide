@@ -10,6 +10,8 @@ import Foundation
 
 public class MinCharsRule: Enforceable {
 
+	init() {}
+	
     public var error: String = "Field does not enforce minumum chars"
     public var minChars: Int?
     

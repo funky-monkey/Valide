@@ -10,6 +10,8 @@ import Foundation
 
 public class EmailRule: Enforceable {
 
+	init() {}
+
     public var error: String = "Field must contain at least a @ and a ."
     
     public func enforce(input: String) -> Bool {

@@ -10,6 +10,8 @@ import Foundation
 
 public class RequiredRule: Enforceable {
 
+	init() {}
+
     public var error: String = "Field is required"
     
     public func enforce(input: String) -> Bool {
