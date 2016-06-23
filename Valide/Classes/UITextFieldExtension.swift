@@ -22,7 +22,7 @@ extension UITextField: Validatable {
         }
     }
     
-    public func isValid() -> (isValid:Bool, validationName: String, error: String?) {
+    func isValid() -> (isValid:Bool, validationName: String, error: String?) {
 
         var isValid: Bool = false
 
@@ -44,11 +44,11 @@ extension UITextField: Validatable {
         return (isValid, self.validationName, nil)
     }
     
-    public func addRule(rule: Enforceable) -> Void {
+    func addRule(rule: Enforceable) -> Void {
         Valide.sharedInstance.addValidationRule(self, rule: rule)
     }
     
-    public func validate(completion: () -> (), error: (validationName: String, error: String) -> ()) {
+    func validate(completion: () -> (), error: (validationName: String, error: String) -> ()) {
         let validationResult = self.isValid()
 
         if validationResult.isValid {
@@ -59,7 +59,7 @@ extension UITextField: Validatable {
         }
     }
     
-    public func error() -> Void {
+    func error() -> Void {
         // return the error from a UITextField?
     }
 }

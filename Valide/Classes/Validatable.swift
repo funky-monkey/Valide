@@ -19,7 +19,7 @@ protocol Validatable {
     Stap 7: Default messages (structs/init???)
     */
 
-    public func isValid() -> (isValid:Bool, validationName: String, error: String?)
-    public func addRule(rule: Enforceable) -> Void
-    public func validate(completion: () -> (), error: (validationName: String, error: String) -> ())
+    func isValid() -> (isValid:Bool, validationName: String, error: String?)
+    func addRule(rule: Enforceable) -> Void
+    func validate(completion: () -> (), error: (validationName: String, error: String) -> ())
 }

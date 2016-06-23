@@ -11,6 +11,6 @@ import Foundation
 // Enforces rule - executes the actual SomethingRule on the field
 protocol Enforceable {
 
-    public var error: String { get }
-    public func enforce(input:String) -> Bool
+    var error: String { get }
+    func enforce(input:String) -> Bool
 }
