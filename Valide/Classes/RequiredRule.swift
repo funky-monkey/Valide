@@ -10,7 +10,7 @@ import Foundation
 
 public class RequiredRule: Enforceable {
 
-	init() {}
+	public init() { }
 
     public var error: String = "Field is required"
     
