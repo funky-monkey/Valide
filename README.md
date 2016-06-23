@@ -1,13 +1,20 @@
 # Valide
 
-[![CI Status](http://img.shields.io/travis/Sidney de Koning/Valide.svg?style=flat)](https://travis-ci.org/Sidney de Koning/Valide)
 [![Version](https://img.shields.io/cocoapods/v/Valide.svg?style=flat)](http://cocoapods.org/pods/Valide)
 [![License](https://img.shields.io/cocoapods/l/Valide.svg?style=flat)](http://cocoapods.org/pods/Valide)
 [![Platform](https://img.shields.io/cocoapods/p/Valide.svg?style=flat)](http://cocoapods.org/pods/Valide)
 
-## Usage
+## Installation
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Valide is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "Valide"
+```
+
+
+## Usage
 
 From your ViewController set up everything first. Start with the validation names for the fields.
 
@@ -69,16 +76,6 @@ Upon receiving an error, the name of the field is returned as well as the error 
 You can then check the `.isValid()` on the field you are validating. This returns a tuple with three properties. 
 
 `func isValid() -> (isValid:Bool, validationName: String, error: String?)`
-
-
-## Installation
-
-Valide is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "Valide"
-```
 
 ## Author
 
