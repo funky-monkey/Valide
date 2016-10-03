@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum ValidationErrors: ErrorType {
+enum ValidationErrors: Error {
     
 }

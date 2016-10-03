@@ -12,13 +12,13 @@ import UIKit
 /*
 This class only functions as storage
 */
-public class Valide {
+class Valide {
     
-    public static let sharedInstance = Valide()
+    static let sharedInstance = Valide()
     
-    private(set) lazy var rules: [UITextField:[Enforceable]]  = [:]
+    fileprivate(set) lazy var rules: [UITextField:[Enforceable]]  = [:]
 
-    func addValidationRule(field: UITextField, rule: Enforceable) -> Void {
+    func addValidationRule(_ field: UITextField, rule: Enforceable) -> Void {
 
         var enforceables:[Enforceable] = []
 

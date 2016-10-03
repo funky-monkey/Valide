@@ -8,13 +8,11 @@
 
 import Foundation
 
-public class NonEmptyFieldRule: Enforceable {
+class NonEmptyFieldRule: Enforceable {
 
-	required public init() { }
-	
-    public var error: String = "Field can not be empty"
+    var error: String = "Field can not be empty"
 
-    public func enforce(input: String) -> Bool {
+    func enforce(_ input: String) -> Bool {
         return !input.isEmpty
     }
 }

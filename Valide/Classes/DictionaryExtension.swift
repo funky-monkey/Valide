@@ -9,7 +9,7 @@
 import Foundation
 import Swift
 
-public extension Dictionary {
+extension Dictionary {
     
     
     /**
@@ -18,8 +18,8 @@ public extension Dictionary {
     - parameter key: Key to check
     - returns: true if the key exists
     */
-    public func has (key: Key) -> Bool {
-        return self.indexForKey(key) != nil
+    func has (_ key: Key) -> Bool {
+        return self.index(forKey: key) != nil
     }
     
     /**
@@ -29,7 +29,7 @@ public extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped array
     */
-    public func toArray <V> (map: (Key, Value) -> V) -> [V] {
+    func toArray <V> (_ map: (Key, Value) -> V) -> [V] {
         
         var mapped = [V]()
         
@@ -48,7 +48,7 @@ public extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    public func mapValues <V> (map: (Key, Value) -> V) -> [Key: V] {
+    func mapValues <V> (_ map: (Key, Value) -> V) -> [Key: V] {
         
         var mapped = [Key: V]()
         
@@ -67,7 +67,7 @@ public extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    public func mapFilterValues <V> (map: (Key, Value) -> V?) -> [Key: V] {
+    func mapFilterValues <V> (_ map: (Key, Value) -> V?) -> [Key: V] {
         
         var mapped = [Key: V]()
         
@@ -88,7 +88,7 @@ public extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    public func mapFilter <K, V> (map: (Key, Value) -> (K, V)?) -> [K: V] {
+    func mapFilter <K, V> (_ map: (Key, Value) -> (K, V)?) -> [K: V] {
         
         var mapped = [K: V]()
         
@@ -109,7 +109,7 @@ public extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    public func map <K, V> (map: (Key, Value) -> (K, V)) -> [K: V] {
+    func map <K, V> (_ map: (Key, Value) -> (K, V)) -> [K: V] {
         
         var mapped = [K: V]()
         
@@ -127,7 +127,7 @@ public extension Dictionary {
     
     - parameter eachFunction: Function to inovke on each loop
     */
-    public func each (each: (Key, Value) -> ()) {
+    func each (_ each: (Key, Value) -> ()) {
         
         for (key, value) in self {
             each(key, value)
@@ -142,7 +142,7 @@ public extension Dictionary {
     - parameter testFunction: Function called to test each key, value
     - returns: Filtered dictionary
     */
-    public func filter (test: (Key, Value) -> Bool) -> Dictionary {
+    func filter (_ test: (Key, Value) -> Bool) -> Dictionary {
         
         var result = Dictionary()
         
@@ -164,7 +164,7 @@ public extension Dictionary {
     - parameter groupingFunction:
     - returns: Grouped dictionary
     */
-    public func groupBy <T> (group: (Key, Value) -> T) -> [T: [Value]] {
+    func groupBy <T> (_ group: (Key, Value) -> T) -> [T: [Value]] {
         
         var result = [T: [Value]]()
         
@@ -190,7 +190,7 @@ public extension Dictionary {
     - parameter groupingFunction: Function called to define the grouping key
     - returns: Grouped dictionary
     */
-    public func countBy <T> (group: (Key, Value) -> (T)) -> [T: Int] {
+    func countBy <T> (_ group: (Key, Value) -> (T)) -> [T: Int] {
         
         var result = [T: Int]()
         
@@ -215,7 +215,7 @@ public extension Dictionary {
     - parameter test: Function to call for each element
     - returns: true if test returns true for all the elements in self
     */
-    public func all (test: (Key, Value) -> (Bool)) -> Bool {
+    func all (_ test: (Key, Value) -> (Bool)) -> Bool {
         
         for (key, value) in self {
             if !test(key, value) {
@@ -233,7 +233,7 @@ public extension Dictionary {
     - parameter test: Function to call for each element
     - returns: true if test returns true for any element of self
     */
-    public func any (test: (Key, Value) -> (Bool)) -> Bool {
+    func any (_ test: (Key, Value) -> (Bool)) -> Bool {
         
         for (key, value) in self {
             if test(key, value) {
@@ -252,7 +252,7 @@ public extension Dictionary {
     - parameter test: Function to call for each element
     - returns: the number of elements meeting the condition
     */
-    public func countWhere (test: (Key, Value) -> (Bool)) -> Int {
+    func countWhere (_ test: (Key, Value) -> (Bool)) -> Int {
         
         var result = 0
         
@@ -273,7 +273,7 @@ public extension Dictionary {
     - parameter combine: Function that reduces the dictionary
     - returns: Resulting value
     */
-    public func reduce <U> (initial: U, combine: (U, Element) -> U) -> U {
+    func reduce <U> (_ initial: U, combine: (U, Element) -> U) -> U {
         return self.reduce(initial, combine: combine)
     }
     
@@ -283,7 +283,7 @@ public extension Dictionary {
     - parameter keys: Whitelisted keys
     - returns: Filtered dictionary
     */
-    public func pick (keys: [Key]) -> Dictionary {
+    func pick (_ keys: [Key]) -> Dictionary {
         return filter { (key: Key, _) -> Bool in
             return keys.contains(key)
         }
@@ -295,8 +295,8 @@ public extension Dictionary {
     - parameter keys: Whitelisted keys
     - returns: Filtered dictionary
     */
-    public func pick (keys: Key...) -> Dictionary {
-        return pick(unsafeBitCast(keys, [Key].self))
+    func pick (_ keys: Key...) -> Dictionary {
+        return pick(unsafeBitCast(keys, to: [Key].self))
     }
     
     /**
@@ -305,7 +305,7 @@ public extension Dictionary {
     - parameter keys: Keys to get
     - returns: Dictionary with the given keys
     */
-    public func at (keys: Key...) -> Dictionary {
+    func at (_ keys: Key...) -> Dictionary {
         return pick(keys)
     }
     
@@ -315,9 +315,9 @@ public extension Dictionary {
     
     - returns: (key, value) tuple
     */
-    public mutating func shift () -> (Key, Value)? {
+    mutating func shift () -> (Key, Value)? {
         if let key = keys.first {
-            return (key, removeValueForKey(key)!)
+            return (key, removeValue(forKey: key)!)
         }
         
         return nil

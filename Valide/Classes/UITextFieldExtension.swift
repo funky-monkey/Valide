@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField: Validatable {
 
-    public var validationName: String {
+    var validationName: String {
         get {
             assert(self.accessibilityIdentifier != nil, "Please provide a validationName")
             guard let accessibilityIdentifier = self.accessibilityIdentifier else { return String() }
@@ -22,7 +22,7 @@ extension UITextField: Validatable {
         }
     }
     
-    public func isValid() -> (isValid:Bool, validationName: String, error: String?) {
+    func isValid() -> (isValid:Bool, validationName: String, error: String?) {
 
         var isValid: Bool = false
 
@@ -44,18 +44,18 @@ extension UITextField: Validatable {
         return (isValid, self.validationName, nil)
     }
     
-    public func addRule(rule: Enforceable) -> Void {
+    func addRule(_ rule: Enforceable) -> Void {
         Valide.sharedInstance.addValidationRule(self, rule: rule)
     }
     
-    public func validate(completion: () -> (), error: (validationName: String, error: String) -> ()) {
+    func validate(_ completion: () -> (), error: (_ validationName: String, _ error: String) -> ()) {
         let validationResult = self.isValid()
 
         if validationResult.isValid {
             completion()
         } else {
             // We know this is the only place we can have an error - hence the !
-            error(validationName: validationResult.validationName, error: validationResult.error!)
+            error(validationResult.validationName, validationResult.error!)
         }
     }
     

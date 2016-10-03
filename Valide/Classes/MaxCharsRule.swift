@@ -7,15 +7,33 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
-public class MaxCharsRule: Enforceable {
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
 
-	required public init() { }
-	
-    public var error: String = "Field can only have a maximum of 25 characters"
-    public var maxChars: Int?
 
-    public func enforce(input: String) -> Bool {
+class MaxCharsRule: Enforceable {
+
+    var error: String = "Field can only have a maximum of 25 characters"
+    var maxChars: Int?
+
+    func enforce(_ input: String) -> Bool {
         return input.characters.count <= self.maxChars
     }
 }

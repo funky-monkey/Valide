@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Valide'
-  s.version          = '0.1.10'
+  s.version          = '0.1.11'
   s.summary          = 'Something that helps you with the validity of the content of UITextFields by adding rules to them.'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ I needed a simple way of validating user input, so one afternoon I wrote this. S
   s.source           = { :git => 'https://github.com/funky-monkey/Valide.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/sidneydekoning'
 
-  s.ios.deployment_target = '8.4'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Valide/Classes/**/*'
 
