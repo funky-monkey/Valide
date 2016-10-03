@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NonEmptyFieldRule: Enforceable {
+open class NonEmptyFieldRule: Enforceable {
 
     var error: String = "Field can not be empty"
 

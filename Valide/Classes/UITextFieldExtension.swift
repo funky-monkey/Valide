@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField: Validatable {
 
-    var validationName: String {
+    open var validationName: String {
         get {
             assert(self.accessibilityIdentifier != nil, "Please provide a validationName")
             guard let accessibilityIdentifier = self.accessibilityIdentifier else { return String() }
@@ -22,7 +22,7 @@ extension UITextField: Validatable {
         }
     }
     
-    func isValid() -> (isValid:Bool, validationName: String, error: String?) {
+    open func isValid() -> (isValid:Bool, validationName: String, error: String?) {
 
         var isValid: Bool = false
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EmailRule: Enforceable {
+open class EmailRule: Enforceable {
 
     var error: String = "Field must contain at least a @ and a ."
     

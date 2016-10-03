@@ -28,7 +28,7 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class MaxCharsRule: Enforceable {
+open class MaxCharsRule: Enforceable {
 
     var error: String = "Field can only have a maximum of 25 characters"
     var maxChars: Int?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RequiredRule: Enforceable {
+open class RequiredRule: Enforceable {
 
     var error: String = "Field is required"
     

@@ -28,7 +28,7 @@ fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class MinCharsRule: Enforceable {
+open class MinCharsRule: Enforceable {
 
     var error: String = "Field does not enforce minumum chars"
     var minChars: Int?
