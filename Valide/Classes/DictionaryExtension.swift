@@ -29,7 +29,7 @@ extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped array
     */
-    func toArray <V> (_ map: (Key, Value) -> V) -> [V] {
+    public func toArray <V> (_ map: (Key, Value) -> V) -> [V] {
         
         var mapped = [V]()
         
@@ -48,7 +48,7 @@ extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    func mapValues <V> (_ map: (Key, Value) -> V) -> [Key: V] {
+    public func mapValues <V> (_ map: (Key, Value) -> V) -> [Key: V] {
         
         var mapped = [Key: V]()
         
@@ -67,7 +67,7 @@ extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    func mapFilterValues <V> (_ map: (Key, Value) -> V?) -> [Key: V] {
+    public func mapFilterValues <V> (_ map: (Key, Value) -> V?) -> [Key: V] {
         
         var mapped = [Key: V]()
         
@@ -88,7 +88,7 @@ extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    func mapFilter <K, V> (_ map: (Key, Value) -> (K, V)?) -> [K: V] {
+    public func mapFilter <K, V> (_ map: (Key, Value) -> (K, V)?) -> [K: V] {
         
         var mapped = [K: V]()
         
@@ -109,7 +109,7 @@ extension Dictionary {
     - parameter mapFunction:
     - returns: Mapped dictionary
     */
-    func map <K, V> (_ map: (Key, Value) -> (K, V)) -> [K: V] {
+    public func map <K, V> (_ map: (Key, Value) -> (K, V)) -> [K: V] {
         
         var mapped = [K: V]()
         
@@ -127,7 +127,7 @@ extension Dictionary {
     
     - parameter eachFunction: Function to inovke on each loop
     */
-    func each (_ each: (Key, Value) -> ()) {
+    public func each (_ each: (Key, Value) -> ()) {
         
         for (key, value) in self {
             each(key, value)
@@ -142,7 +142,7 @@ extension Dictionary {
     - parameter testFunction: Function called to test each key, value
     - returns: Filtered dictionary
     */
-    func filter (_ test: (Key, Value) -> Bool) -> Dictionary {
+    public func filter (_ test: (Key, Value) -> Bool) -> Dictionary {
         
         var result = Dictionary()
         
@@ -164,7 +164,7 @@ extension Dictionary {
     - parameter groupingFunction:
     - returns: Grouped dictionary
     */
-    func groupBy <T> (_ group: (Key, Value) -> T) -> [T: [Value]] {
+    public func groupBy <T> (_ group: (Key, Value) -> T) -> [T: [Value]] {
         
         var result = [T: [Value]]()
         
@@ -190,7 +190,7 @@ extension Dictionary {
     - parameter groupingFunction: Function called to define the grouping key
     - returns: Grouped dictionary
     */
-    func countBy <T> (_ group: (Key, Value) -> (T)) -> [T: Int] {
+    public func countBy <T> (_ group: (Key, Value) -> (T)) -> [T: Int] {
         
         var result = [T: Int]()
         
@@ -215,7 +215,7 @@ extension Dictionary {
     - parameter test: Function to call for each element
     - returns: true if test returns true for all the elements in self
     */
-    func all (_ test: (Key, Value) -> (Bool)) -> Bool {
+    public func all (_ test: (Key, Value) -> (Bool)) -> Bool {
         
         for (key, value) in self {
             if !test(key, value) {
@@ -233,7 +233,7 @@ extension Dictionary {
     - parameter test: Function to call for each element
     - returns: true if test returns true for any element of self
     */
-    func any (_ test: (Key, Value) -> (Bool)) -> Bool {
+    public func any (_ test: (Key, Value) -> (Bool)) -> Bool {
         
         for (key, value) in self {
             if test(key, value) {
@@ -252,7 +252,7 @@ extension Dictionary {
     - parameter test: Function to call for each element
     - returns: the number of elements meeting the condition
     */
-    func countWhere (_ test: (Key, Value) -> (Bool)) -> Int {
+    public func countWhere (_ test: (Key, Value) -> (Bool)) -> Int {
         
         var result = 0
         
@@ -273,7 +273,7 @@ extension Dictionary {
     - parameter combine: Function that reduces the dictionary
     - returns: Resulting value
     */
-    func reduce <U> (_ initial: U, combine: (U, Element) -> U) -> U {
+    public func reduce <U> (_ initial: U, combine: (U, Element) -> U) -> U {
         return self.reduce(initial, combine: combine)
     }
     
@@ -283,7 +283,7 @@ extension Dictionary {
     - parameter keys: Whitelisted keys
     - returns: Filtered dictionary
     */
-    func pick (_ keys: [Key]) -> Dictionary {
+    public func pick (_ keys: [Key]) -> Dictionary {
         return filter { (key: Key, _) -> Bool in
             return keys.contains(key)
         }
@@ -295,7 +295,7 @@ extension Dictionary {
     - parameter keys: Whitelisted keys
     - returns: Filtered dictionary
     */
-    func pick (_ keys: Key...) -> Dictionary {
+    public func pick (_ keys: Key...) -> Dictionary {
         return pick(unsafeBitCast(keys, to: [Key].self))
     }
     
@@ -305,7 +305,7 @@ extension Dictionary {
     - parameter keys: Keys to get
     - returns: Dictionary with the given keys
     */
-    func at (_ keys: Key...) -> Dictionary {
+    public func at (_ keys: Key...) -> Dictionary {
         return pick(keys)
     }
     
@@ -315,7 +315,7 @@ extension Dictionary {
     
     - returns: (key, value) tuple
     */
-    mutating func shift () -> (Key, Value)? {
+    public mutating func shift () -> (Key, Value)? {
         if let key = keys.first {
             return (key, removeValue(forKey: key)!)
         }

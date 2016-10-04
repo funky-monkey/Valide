@@ -12,7 +12,7 @@ import UIKit
 /*
 This class only functions as storage
 */
-open class Valide {
+public class Valide {
     
     static let sharedInstance = Valide()
     
